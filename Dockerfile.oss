@@ -1,0 +1,14 @@
+FROM golang:1.23-bookworm AS gotools
+RUN go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest \
+    && go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest \
+    && go install github.com/owasp-amass/amass/v4/...@master \
+    && go install github.com/d3mondev/puredns/v2@latest \
+    && go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
+
+FROM python:3.12-slim
+WORKDIR /app
+COPY --from=gotools /go/bin /usr/local/bin
+COPY . /app
+RUN python -m pip install --no-cache-dir -U pip \
+    && python -m pip install --no-cache-dir .
+ENTRYPOINT ["dnsRecon"]

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dnsrecon-cli"
+version = "1.0.3"
+description = "dnsRecon - terminal-first DNS intelligence and optional OSS-powered reconnaissance toolkit for authorized pentesters."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Avins" }]
+license = { text = "MIT" }
+keywords = ["dns", "recon", "pentest", "kali", "security", "osint"]
+dependencies = [
+  "dnspython>=2.4",
+  "typer>=0.12",
+  "rich>=13.0",
+  "requests>=2.31"
+]
+
+[project.scripts]
+dnsRecon = "dnx.cli:run"
+dnx = "dnx.cli:run"  # legacy alias
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dnx*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

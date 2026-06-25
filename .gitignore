@@ -1,0 +1,72 @@
+@'
+# ============================================================
+# dnsRecon .gitignore
+# Python / security-tool release cleanup
+# ============================================================
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python build/package files
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+*.egg
+MANIFEST
+
+# Test/cache output
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+.mypy_cache/
+.ruff_cache/
+
+# dnsRecon generated output
+reports/
+dnsrecon_real_tests_*/
+*.log
+
+# Local environment files
+.env
+.env.*
+*.local
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary/archive files
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# PowerShell / Windows temporary files
+*.tmp
+*.bak
+
+# Keep GitHub workflow
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+'@ | Set-Content .gitignore
