@@ -65,7 +65,7 @@ The tool is designed to be practical: **fast output first, reports optional, no 
 **1. Clone or Extract the Project**
 ```bash
 # Option A: From GitHub
-git clone https://github.com/YOUR_USERNAME/dnsRecon.git
+git clone https://github.com/Ibrahim71Reza/dnsRecon.git
 cd dnsRecon
 
 # Option B: From ZIP
